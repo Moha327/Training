@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/create_user" method="post">
+        {% csrf_token %}
+        <label for="first_name">first_name:</label>
+        <input type="text" name="fname">
+        <label for="last_name">last_name:</label>
+        <input type="text" name="lname">
+        <label for="email_address">email_address:</label>
+        <input type="text" name="eaddress">
+        <label for="age">age:</label>
+        <input type="text" name="age1">
+        <button>submit</button>
+    </form>
+    {% for i in User %}
+        <li>{{ i.first_name }} {{ i.last_name }} {{ i.email_address }} {{ i.age }}</li>
+    {% endfor %}
+</body>
+</html>

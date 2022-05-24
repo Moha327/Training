@@ -1,0 +1,28 @@
+ users.objects.create(first_name="Mohammed", last_name="Hammouz",email_address="m7amad9595@outlook.com",age=27)
+
+* retreive all instances:
+users.objects.all()
+
+* retreive last instance:
+users.objects.last()
+
+* retreive first instance:
+users.objects.first()
+
+*update
+user1 = users.objects.get(id=3)
+user1.field_name = "Pancakes"
+user1.save()
+
+
+* delete
+user2 = users.objects.get(id=2)
+user2.delete()
+
+*ordering
+
+A-accending:
+users.objects.all().order_by("first_name")
+
+A-deccending:
+users.objects.all().order_by("-first_name")

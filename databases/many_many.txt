@@ -1,0 +1,30 @@
+create database of books:
+books.objects.create(title="C Sharp")
+update feild in authors:
+author1=authors.objects.get(id=5)
+author1.first_name="Bill"
+author1.save()
+
+author1 = authors.objects.get(id=1)
+book1 = books.objects.get(id=1)
+book2 = books.objects.get(id=2)
+assign author1 to first two books
+book1.authors.add(author1)
+book2.authors.add(author1)
+
+assign author2 to first three books
+author2 = authors.objects.get(id=2)
+book1.authors.add(author2)
+book2.authors.add(author2)
+book3 = books.objects.get(id=3)
+book3.authors.add(author2)
+
+assign author3 to first five books
+author3 = authors.objects.get(id=3)
+book4 = books.objects.get(id=4)
+book1.authors.add(author3)
+book2.authors.add(author3)
+book3.authors.add(author3)
+book4.authors.add(author3)
+book5 = books.objects.get(id=5)
+book5.authors.add(author5)

@@ -1,0 +1,12 @@
+create dojos objects:
+dojos.objects.create(name="hee hhhh",city="Nablus",state="wb")
+delete dojos objects:
+a=dojos.objects.get(id=1)
+a.delete()
+create ninjas objects belong to dojos :
+ninjas.objects.create(first_name="haaaaaa",last_name="hpppppppppppp",author=dojos.objects.get(id=4))
+Retrieve all the ninjas from the first dojo:
+ninjas.objects.filter(author=dojos.objects.first())
+Retrieve all the ninjas from the last dojo:
+ninjas.objects.filter(author=dojos.objects.last())
+

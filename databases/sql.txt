@@ -1,0 +1,39 @@
+CREATE TABLE students (
+  CustomerID INTEGER PRIMARY KEY,
+  CustomerName TEXT NOT NULL,
+  ContactName TEXT NOT NULL,
+  Address TEXT NOT NULL,
+  City TEXT NOT NULL,
+  PostalCode INTEGER NOT NULL,
+  Country TEXT NULL,
+  Price INTEGER Not NULL
+);
+-- insert some values
+INSERT INTO students VALUES (1,'Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', 4006, 'Norway',33);
+INSERT INTO students VALUES (2,'Car', 'Tommy B. Jacsson', 'Skagen 0', 'St', 5556, 'Germany',44);
+INSERT INTO students VALUES (3,'Kee', 'Michel B.Muller', 'Berlein 21', 'Stavanger', 4444 ,'France',88);
+INSERT INTO students VALUES (4,'Goo', 'Mpopwopw', 'Athena 21', 'Stavanger', 3455 ,'Greek',99);
+INSERT INTO students VALUES (5,'Maa', 'T.Muller', 'Berlein 21', 'Stavanger', 3334 ,'Germany',100);
+INSERT INTO students VALUES (6,'Baaa', 'Abeer Hammouz', 'London 21', 'Stavanger', 3434 ,'England',33);
+INSERT INTO students VALUES (7,'Noooo', 'Poten', 'Moscow 21', 'Stavanger', 2222 ,'Russia',2000);
+INSERT INTO students VALUES (8,'Japap', 'G.Muller', 'Berlein 21', 'Stavanger', 4222,'Germany',3000);
+INSERT INTO students VALUES (9,'Kppp', 'Michel B.Muller', 'Berlein 21', 'Stavanger', 4444 ,'America',444);
+INSERT INTO students VALUES (10,'Kfd', 'Michel B.Muller', 'Berlein 21', 'Stavanger', 4444 ,'Australia',222);
+INSERT INTO students VALUES (11,'Poo', 'Michel B.Muller', 'Berlein 21', 'Stavanger', 4444 ,'Palestine',555);
+-- fetch some values
+
+SELECT MAX(Price) AS Price
+FROM students;
+SELECT COUNT(CustomerID)
+FROM students;
+SELECT AVG(Price)
+FROM students;
+SELECT SUM(Price)
+FROM students;
+SELECT * FROM students
+WHERE CustomerName LIKE 'K%';
+SELECT * FROM students
+WHERE Country IN ('Germany', 'France', 'UK');
+SELECT * FROM students
+WHERE Price BETWEEN 1000 AND 4000
+AND CustomerID NOT IN (1,2,3);
